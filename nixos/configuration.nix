@@ -14,6 +14,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     features/wifi.nix
+    features/tailscale.nix
     ./common
 
     # Import your generated (nixos-generate-config) hardware configuration
