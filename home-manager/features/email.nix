@@ -25,16 +25,4 @@ in
       };
     };
   };
-
-  programs.aerc = {
-    enable = true;
-    extraConfig = {
-      general = {
-        unsafe-accounts-conf = true;
-      };
-      ui = {
-        mouse-enabled = true;
-      };
-    };
-  };
 }
