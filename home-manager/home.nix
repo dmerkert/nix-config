@@ -15,6 +15,9 @@
     ./features/zsh.nix
     ./features/git.nix
     ./features/nvim.nix
+    ./features/pass.nix
+    ./features/gpg.nix
+    ./features/email.nix
   ];
 
   nixpkgs = {
