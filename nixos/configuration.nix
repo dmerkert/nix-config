@@ -15,6 +15,7 @@
     # ./users.nix
     features/wifi.nix
     features/tailscale.nix
+    #features/paperless.nix
     ./common
 
     # Import your generated (nixos-generate-config) hardware configuration
