@@ -1,14 +1,12 @@
 {pkgs, ...}:
 
 {
-  home.packages = [ pkgs.ripgrep ];
   
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    #defaultEditor = true;
     extraConfig = ''
       set number
       let mapleader = " "
@@ -86,4 +84,6 @@
     ];
   };
 
+  #required by telescope-nvim
+  home.packages = [ pkgs.ripgrep ];
 }
