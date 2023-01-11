@@ -2,10 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
+    neovim
     wget
     tmux
     git
     home-manager
   ];
+
+  environment.variables.EDITOR = "nvim";
 }
