@@ -18,7 +18,6 @@
     ./features/pass.nix
     ./features/gpg.nix
     ./features/email.nix
-    ./features/aerc.nix
   ];
 
   nixpkgs = {

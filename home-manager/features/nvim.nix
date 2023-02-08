@@ -1,5 +1,18 @@
 {pkgs, ...}:
 
+let
+  # Left in as an example how to add vim plugins from Github directly
+#  notmuch-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+#    name = "notmuch-vim";
+#    src = pkgs.fetchFromGitHub {
+#      owner = "felipec";
+#      repo = "notmuch-vim";
+#      rev = "971c6626caa2ef51963bc5d67a3782e30b1f5824";
+#      #sha256 = "0000000000000000000000000000000000000000000000000000";
+#      sha256 = "fjXq15ORSEbUkPLjOlYPWnZ7aSDYe+XDmPn5GXnEP0M=";
+#    };
+#  };
+in
 {
   
   programs.neovim = {
@@ -7,11 +20,13 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    #withRuby = true; #Required for notmuch-vim
     extraConfig = ''
       set number
       let mapleader = " "
     '';
     plugins = with pkgs.vimPlugins; [
+      #notmuch-vim
       vim-nix
       nvim-lspconfig
       nvim-cmp
