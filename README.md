@@ -1,3 +1,40 @@
+# Hardware
+
+## Invidia - Raspberry Pi 3B
+
+* RAM: 1 GB
+* CPU: Quad Core 1.2GHz Broadcom BCM2837 64bit
+* Wifi: BCM43438
+* Bluetooth: Bluetooth Low Energy (BLE)
+* Ethernet: 100 Base Ethernet
+* Ports:
+  * 40-pin extended GPIO
+  * 4 USB 2 ports
+  * 4 Pole stereo output and composite video port
+  * Full size HDMI
+* Power requirements: 5V / 2.5A
+
+## Ira - ODROID C4
+Centrino Advanced-N 6200
+* RAM: 4 GB LPDDR4 RAM
+* CPU: Amlogic S905X3 Prozessor (2,0 GHz Cortex-A55 (ARM v8) Quad-Core-CPU)
+* GPU: Mali-G31 MP2 GPU mit 4 x Execution Engines (650Mhz)
+* Ethernet: 10/100/1000
+* Ports:
+  * HDMI 4K (4096 × 2048 Pixel), Codierung H.265 mit 60 FPS, H.264 mit 30 FPS
+  * 40+7-Pin (GPIO, UART, I2C, I2S, ADC), Micro-SD- & eMMC-Steckplatz, IR-Empfänger
+* Power requirements: 12 V / 2 A (über Hohlbuchse 5,5 mm außen und 2,1 mm innen)
+
+## Luxuria - Lenovo ThinkPad T410
+
+* RAM: 4 GB
+* CPU: Intel Core i5 2.40 GHz
+* GPU: VGA Intel Core Processor Integrated Graphics Controller
+* Ethernet: 82577LM Gigabit Network Connection
+* Bluetooth: Broadcom Bluetooth Device
+* Wifi: Intel Centrino Advanced-N 6200
+* Intenso Interne 2,5" SSD SATA III Top, 256 GB
+
 # How to deploy NixOS
 
 ## Intel / AMD
