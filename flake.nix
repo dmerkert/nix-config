@@ -56,7 +56,15 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./nixos/hosts/heureka/configuration.nix
+          ];
+        };
+        #VM
+        vm = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/hosts/vm/configuration.nix
           ];
         };
       };
