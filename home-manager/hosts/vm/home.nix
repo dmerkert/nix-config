@@ -18,7 +18,10 @@
     ../../features/pass.nix
     ../../features/gpg.nix
     ../../features/email.nix
-    ../../features/browser.nix
+    #../../features/browser.nix
+    #../../features/standardnotes.nix
+    #../../features/calibre.nix
+    #../../features/freecad.nix
   ];
 
   nixpkgs = {
