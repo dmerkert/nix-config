@@ -78,7 +78,16 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/hosts/heureka/home.nix
+          ];
+        };
+        #VM
+        "user@vm" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/hosts/vm/home.nix
           ];
         };
       };

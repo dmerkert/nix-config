@@ -12,12 +12,12 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./features/zsh.nix
-    ./features/git.nix
-    ./features/nvim.nix
-    ./features/pass.nix
-    ./features/gpg.nix
-    ./features/email.nix
+    ../../features/zsh.nix
+    ../../features/git.nix
+    ../../features/nvim.nix
+    ../../features/pass.nix
+    ../../features/gpg.nix
+    ../../features/email.nix
   ];
 
   nixpkgs = {

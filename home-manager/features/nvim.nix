@@ -100,5 +100,5 @@ in
   };
 
   #required by telescope-nvim
-  home.packages = [ pkgs.ripgrep ];
+  home.packages = [ pkgs.ripgrep pkgs.gcc ];
 }
