@@ -1,5 +1,6 @@
 keys:
   - &server_heureka age1cvv0jcnytk8zyw7q0qyqh34vuaz9ahxy8l0de96c80uje0tq893q9jgpej
+  - &server_vm age1ckac2pzchc87zg38sx6x4yypw2elfjelc84egdhfrj90j3zhk53spxs0ln
   - &admin_heureka age129d0anamzkwl2exlcgf5p37qwpcgg4scljym7pf9xp049zeqnp7syka73a
   - &main_key_laptop age1lzr2tandayu8yw6wfh49slhl8hhwzz0phdldeemk5ryryqkwu9gqd0e7y8
 creation_rules:
@@ -9,3 +10,4 @@ creation_rules:
           - *admin_heureka
           - *server_heureka
           - *main_key_laptop
+          - *server_vm
