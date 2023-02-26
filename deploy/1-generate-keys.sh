@@ -25,4 +25,5 @@ echo "Public age-key for user (add to .sops.yaml):" >>public_keys.txt
 age-keygen -y ~/.config/sops/age/keys.txt >>public_keys.txt
 
 echo "Public age-key of the machine (add to .sops.yaml):" >>public_keys.txt
+cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age >>public_keys.txt
 
