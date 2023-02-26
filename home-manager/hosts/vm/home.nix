@@ -18,6 +18,7 @@
     ../../features/pass.nix
     ../../features/gpg.nix
     ../../features/email.nix
+    ../../features/browser.nix
   ];
 
   nixpkgs = {
