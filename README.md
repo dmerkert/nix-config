@@ -68,32 +68,21 @@ Centrino Advanced-N 6200
 
 * Install NixOS as intended on the target system. The **user name** must be `user`!
 
-### Prepare NixOS
-
-Edit the configuration `sudo nano /etc/nixos/configuration.nix`, replace
-```
-  # vim
-  # wget
-```
-by
-```
-  vim
-  git
-  wget
-```
-and apply the configuration with `sudo nixos-rebuild switch`
 
 ### Copy / generate keys
 
-* Generate user ssh key
+* Generate keys
 ```Shell
-  ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -P ""
+  sh deploy/1-generate-keys.sh
 ```
-
+* Follow the instructions in the generated deploy/public_keys.txt
 * Register the generated ssh key with Github for the repository https://github.com/dmerkert/nix-config
 
-* Generate age-keys for nix-sops
+* Recode the sops secrets on a working system using
+```Shell
+  nix develop
+  sops updatekeys secrets/common.yaml
 ```
-  mkdir -p ~/.config/sops/age
-  nix-shell -p ssh-to-age --run "ssh-to-age -private-key -i ~/.ssh/id_ed25519 > ~/.config/sops/age/keys.txt"
-```
+* Push/pull secrets to the target machine
+
+
