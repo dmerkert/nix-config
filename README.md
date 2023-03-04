@@ -1,6 +1,20 @@
 # Hardware
 
-## Invidia - Raspberry Pi 3B
+## Naming schema
+A name of a hardware consists of 3 parts:
+<use><model><number>
+
+* <use> is a 3 letter identifier and is one of the following:
+  * "lap" for laptop
+  * "srv" for server
+* <model> is a 3 letter identifier and is for example:
+  * "ltp" for Lenovo ThinkPad T410
+  * "rpi" for Raspberry Pi 3B
+* <number> is a running 2 digit number, starting at 01
+
+## srvrpi01 - Raspberry Pi 1B
+
+## srvrpi02 - Raspberry Pi 3B
 
 * RAM: 1 GB
 * CPU: Quad Core 1.2GHz Broadcom BCM2837 64bit
@@ -14,7 +28,7 @@
   * Full size HDMI
 * Power requirements: 5V / 2.5A
 
-## Ira - ODROID C4
+## srvodr01 - ODROID C4
 Centrino Advanced-N 6200
 * RAM: 4 GB LPDDR4 RAM
 * CPU: Amlogic S905X3 Prozessor (2,0 GHz Cortex-A55 (ARM v8) Quad-Core-CPU)
@@ -25,7 +39,7 @@ Centrino Advanced-N 6200
   * 40+7-Pin (GPIO, UART, I2C, I2S, ADC), Micro-SD- & eMMC-Steckplatz, IR-Empfänger
 * Power requirements: 12 V / 2 A (über Hohlbuchse 5,5 mm außen und 2,1 mm innen)
 
-## Luxuria - Lenovo ThinkPad T410
+## lapltp01 - Lenovo ThinkPad T410
 
 * RAM: 4 GB
 * CPU: Intel Core i5 2.40 GHz
@@ -34,6 +48,8 @@ Centrino Advanced-N 6200
 * Bluetooth: Broadcom Bluetooth Device
 * Wifi: Intel Centrino Advanced-N 6200
 * Intenso Interne 2,5" SSD SATA III Top, 256 GB
+
+## lapasu01 - Asus Laptop
 
 # How to deploy NixOS
 
