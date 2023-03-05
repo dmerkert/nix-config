@@ -8,6 +8,8 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     #SOPS
     sops-nix.url = "github:Mic92/sops-nix";
@@ -56,7 +58,23 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./nixos/hosts/heureka/configuration.nix
+          ];
+        };
+        #VM
+        vm = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/hosts/vm/configuration.nix
+          ];
+        };
+        #lapltp01 - Lenovo ThinkPad T410
+        lapltp01 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/hosts/lapltp01/configuration.nix
           ];
         };
       };
@@ -70,7 +88,25 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/hosts/heureka/home.nix
+          ];
+        };
+        #VM
+        "user@vm" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/hosts/vm/home.nix
+          ];
+        };
+        #lapltp01 - Lenovo ThinkPad T410
+        "user@lapltp01" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/hosts/lapltp01/home.nix
           ];
         };
       };
