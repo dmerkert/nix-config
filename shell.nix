@@ -5,6 +5,6 @@
   default = pkgs.mkShell {
     # Enable experimental features without having to specify the argument
     NIX_CONFIG = "experimental-features = nix-command flakes";
-    nativeBuildInputs = with pkgs; [ nix home-manager git openssh age ssh-to-age ];
+    nativeBuildInputs = with pkgs; [ nix home-manager git openssh age ssh-to-age sops ];
   };
 }
