@@ -69,6 +69,14 @@
             ./nixos/hosts/vm/configuration.nix
           ];
         };
+        #lapltp01 - Lenovo ThinkPad T410
+        lapltp01 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/hosts/lapltp01/configuration.nix
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -90,6 +98,15 @@
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/hosts/vm/home.nix
+          ];
+        };
+        #lapltp01 - Lenovo ThinkPad T410
+        "user@lapltp01" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/hosts/lapltp01/home.nix
           ];
         };
       };
