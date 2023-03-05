@@ -9,6 +9,18 @@
       "@home_ssid@" = {
         psk = "@home_psk@";
       };
+      "@schilling_ssid@" = {
+        psk = "@schilling_psk@";
+      };
+      "@haacke_ssid@" = {
+        psk = "@haacke_psk@";
+      };
+      "@mapa_ssid@" = {
+        psk = "@mapa_psk@";
+      };
+      "@sabrina_ssid@" = {
+        psk = "@sabrina_psk@";
+      };
     };
   };
 
