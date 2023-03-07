@@ -6,6 +6,7 @@
     ../../features/tailscale.nix
 
     ./hardware-configuration.nix
+    ./disko.nix
   ];
 
   nixpkgs = {
