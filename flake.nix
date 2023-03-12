@@ -90,7 +90,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/hosts/heureka.nix
+            ./home-manager/heureka.nix
           ];
         };
         #VM
@@ -99,7 +99,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/hosts/vm.nix
+            ./home-manager/vm.nix
           ];
         };
         #lapltp01 - Lenovo ThinkPad T410
@@ -108,7 +108,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/hosts/lapltp01.nix
+            ./home-manager/lapltp01.nix
           ];
         };
       };
