@@ -2,7 +2,8 @@
   imports = [
     ../../common
     ../../features/windowmanager.nix
-    ../../features/wifi.nix
+    #../../features/wifi.nix
+    ../../features/networkmanager.nix
     ../../features/tailscale.nix
 
     ./hardware-configuration.nix

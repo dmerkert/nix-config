@@ -3,6 +3,8 @@ keys:
   - &server_vm age1ckac2pzchc87zg38sx6x4yypw2elfjelc84egdhfrj90j3zhk53spxs0ln
   - &admin_heureka age129d0anamzkwl2exlcgf5p37qwpcgg4scljym7pf9xp049zeqnp7syka73a
   - &main_key_laptop age1lzr2tandayu8yw6wfh49slhl8hhwzz0phdldeemk5ryryqkwu9gqd0e7y8
+  - &user_lapltp01 age1lzr2tandayu8yw6wfh49slhl8hhwzz0phdldeemk5ryryqkwu9gqd0e7y8
+  - &server_lapltp01 age1pjrx0s7u0p8lmm4xc27pg4mdnl39dhz5y3zuqg6yf3p94swalppsmpqrzw
 creation_rules:
     - path_regex: secrets/[^/]+\.yaml$
       key_groups:
@@ -11,3 +13,5 @@ creation_rules:
           - *server_heureka
           - *main_key_laptop
           - *server_vm
+          - *user_lapltp01
+          - *server_lapltp01
