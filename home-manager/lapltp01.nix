@@ -7,19 +7,10 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    ./features/zsh.nix
-    ./features/git.nix
-    ./features/nvim.nix
-    ./features/pass.nix
-    ./features/gpg.nix
-    ./features/email.nix
-    ./features/browser.nix
-    ./features/standardnotes.nix
-    ./features/calibre.nix
-    ./features/freecad.nix
-    ./features/zathura.nix
-    ./features/manix.nix
-    ./features/libreoffice.nix
+    ./features/common
+    ./features/desktop
+    ./features/productivity
+    ./features/creative
   ];
 
   nixpkgs = {
