@@ -1,6 +1,7 @@
 # Hardware
 
 ## Naming schema
+https://simple.wikipedia.org/wiki/List_of_figures_in_Greek_mythology
 A name of a hardware consists of 3 parts:
 <use><model><number>
 
