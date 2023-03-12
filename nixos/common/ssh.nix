@@ -3,8 +3,10 @@
     enable = true;
     
     #Harden
-    passwordAuthentication = false;
-    permitRootLogin = "no";
+    settings = {
+      passwordAuthentication = false;
+      permitRootLogin = "no";
+    };
   };
 
   # Passwordless sudo when SSH'ing with keys
