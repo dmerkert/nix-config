@@ -5,6 +5,7 @@
     #../../features/wifi.nix
     ../../features/networkmanager.nix
     ../../features/tailscale.nix
+    ../../features/ntfs.nix
 
     ./hardware-configuration.nix
   ];
