@@ -26,6 +26,7 @@ in
         "identity.fxaccounts.enabled" = false;
         "privacy.trackingprotection.enabled" = true;
         "signon.rememberSignons" = false;
+        "browser.startup.page" = 3;
       };
     };
   };
