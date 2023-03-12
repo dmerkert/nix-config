@@ -6,7 +6,6 @@
     ../../features/tailscale.nix
 
     ./hardware-configuration.nix
-    ./disko.nix
   ];
 
   nixpkgs = {
@@ -39,21 +38,17 @@
     };
   };
 
-
   networking.hostName = "lapltp01";
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable network manager applet
-  programs.nm-applet.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  boot.loader = {
-	  grub.enable = true;
-	  grub.device = "/dev/vda";
-	  grub.useOSProber = true;
+  boot.loader.grub = {
+	  enable = true;
+	  devices = [ "/dev/sda" ];
+    version = 2;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
