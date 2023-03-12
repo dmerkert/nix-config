@@ -18,6 +18,8 @@
     ./features/calibre.nix
     ./features/freecad.nix
     ./features/zathura.nix
+    ./features/manix.nix
+    ./features/libreoffice.nix
   ];
 
   nixpkgs = {
