@@ -15,9 +15,12 @@
     #SOPS
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    #Hardware
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, nixos-hardware, ... }@inputs:
   let
     inherit (self) outputs;
     forAllSystems = nixpkgs.lib.genAttrs [

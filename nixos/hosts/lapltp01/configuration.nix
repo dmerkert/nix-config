@@ -8,6 +8,10 @@
     ../../features/ntfs.nix
 
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t410
+    #Use if T410-specific module does not work
+    #inputs.nixos-hardware.nixosModules.common-cpu-intel
   ];
 
   nixpkgs = {
