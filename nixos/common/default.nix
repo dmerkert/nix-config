@@ -8,6 +8,7 @@
     ./basics.nix
     ./sops.nix
     ./security.nix
+    ./nix.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager = {
