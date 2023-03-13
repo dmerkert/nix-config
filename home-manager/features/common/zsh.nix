@@ -4,7 +4,7 @@
       prezto = {
         enable = true;
         tmux.autoStartRemote = true;
-        tmux.autoStartLocal = true;
+        tmux.autoStartLocal = false;
         prompt.theme = "steeef";
         pmodules = ["environment" "utility" "prompt" "syntax-highlighting" "autosuggestions" "tmux" "git" "directory" "completion"];
       };
