@@ -11,6 +11,7 @@
     ./security.nix
     ./nix.nix
     ./autoupgrade.nix
+    ./locale.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager = {
