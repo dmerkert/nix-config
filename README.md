@@ -58,6 +58,24 @@ Centrino Advanced-N 6200
 
 * https://grahamc.com/blog/erase-your-darlings/
 * https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html#fn6 
+
+Create the following partitions:
+* Boot:
+  * Size 512 MiB
+  * Label: boot
+  * Format: vfat
+* Swap:
+  * Size: 1x RAM
+  * Label: swap
+  * Format: swapfs
+* Data:
+  * Size: max
+  * Label: crypt
+  * Format: luks
+  * Contents:
+    * Size: max
+    * Label: data
+    * Format: btrfs
  
 ## Intel / AMD
 
