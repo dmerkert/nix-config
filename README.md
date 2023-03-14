@@ -70,12 +70,14 @@ Create the following partitions:
   * Format: swapfs
 * Data:
   * Size: max
-  * Label: crypt
+  * Label: $HOSTNAME_crypt
   * Format: luks
   * Contents:
     * Size: max
-    * Label: data
+    * Label: $HOSTNAME
     * Format: btrfs
+
+The labels of boot, swap, and $HOSTNAME (btrfs) can be changed in gparted. The label of the LUKS partition can be changed via `sudo cryptsetup config /dev/sda3 --label $HOSTNAME_crypt`.
  
 ## Intel / AMD
 
