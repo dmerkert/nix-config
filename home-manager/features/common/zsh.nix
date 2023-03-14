@@ -19,4 +19,12 @@
         }
       '';
     };
+
+    home = {
+      persistence = {
+        "/persist/home/user".files = [
+          ".zsh_history"
+        ];
+      };
+    };
 }
