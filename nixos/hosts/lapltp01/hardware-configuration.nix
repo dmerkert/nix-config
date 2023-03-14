@@ -6,6 +6,7 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
+    ./persistence.nix
     ];
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
@@ -16,7 +17,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
       fsType = "btrfs";
-      options = [ "subvol=root" ];
+      options = [ "subvol=root" "compress=zstd" ];
     };
 
   boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/341b0ca1-9ffe-4972-b542-11e4ec4c292b";
@@ -24,13 +25,14 @@
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "noatime" "compress=zstd" ];
     };
 
   fileSystems."/persist" =
     { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
       fsType = "btrfs";
-      options = [ "subvol=persist" ];
+      options = [ "subvol=persist" "compress=zstd" ];
+      neededForBoot = true;
     };
 
   fileSystems."/boot" =

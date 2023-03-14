@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.impermanence.nixosModules.impermanence
 
     ./account.nix
     ./ssh.nix
@@ -18,4 +19,17 @@
   };
 
   hardware.enableRedistributableFirmware = true;
+
+  #needed for impermanence
+  programs.fuse.userAllowOther = true;
+
+  environment = {
+    persistence = {
+      "/persist".directories = [
+        "/var/lib/systemd"
+        "/var/log"
+        "/srv"
+      ];
+    };
+  };
 }

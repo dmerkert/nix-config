@@ -32,4 +32,5 @@
    sops.secrets.paperless_admin = {
      sopsFile = ../../secrets/common.yaml;
    };
+   #TODO: persist
  }

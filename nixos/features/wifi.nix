@@ -27,4 +27,6 @@
     sops.secrets.wifi = {
       sopsFile = ../../secrets/common.yaml;
     };
+
+    #TODO: persist
 }

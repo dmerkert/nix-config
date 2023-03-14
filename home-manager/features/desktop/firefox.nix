@@ -33,6 +33,11 @@ in
 
   home = {
     sessionVariables.BROWSER = "firefox";
+    persistence = {
+      "/persist/home/user".directories = [
+        ".mozilla/firefox"
+      ];
+    };
   };
 
   xdg.mimeApps.defaultApplications = {

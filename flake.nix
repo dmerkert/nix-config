@@ -18,9 +18,12 @@
 
     #Hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    #Impermanence
+    impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, nixos-hardware, impermanence, ... }@inputs:
   let
     inherit (self) outputs;
     forAllSystems = nixpkgs.lib.genAttrs [

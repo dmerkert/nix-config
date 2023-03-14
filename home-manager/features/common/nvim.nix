@@ -101,4 +101,12 @@ in
 
   #required by telescope-nvim
   home.packages = [ pkgs.ripgrep pkgs.gcc ];
+
+  home = {
+    persistence = {
+      "/persist/home/user".directories = [
+        ".cache/nvim"  #Cache for treesitter, etc
+      ];
+    };
+  };
 }

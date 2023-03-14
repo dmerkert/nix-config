@@ -1,5 +1,10 @@
 {
-  nix.settings.auto-optimise-store = true;   
+  nix = {
+    settings = {
+      auto-optimise-store = true;   
+      trusted-users = [ "root" "@wheel" ];
+    };
+  };
 
   nix.gc = {
     automatic = true;

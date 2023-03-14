@@ -107,4 +107,6 @@
   sops.secrets.mailbox_dennis = {
     sopsFile = ../../secrets/common.yaml;
   };
+
+  #TODO: persist
 }
