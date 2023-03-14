@@ -2,13 +2,11 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
-let
-  hostname = config.networking.hostName;
-in
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
-    ./persistence.nix
+    ../../features/btrfs-optin-persistence.nix
+    ../../features/encrypted-root.nix
     ];
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
@@ -16,35 +14,6 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/${hostname}";
-      fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" ];
-    };
-
-  boot.initrd.luks.devices."${hostname}".device = "/dev/disk/by-label/${hostname}_crypt";
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-label/${hostname}";
-      fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "compress=zstd" ];
-    };
-
-  fileSystems."/persist" =
-    { device = "/dev/disk/by-label/${hostname}";
-      fsType = "btrfs";
-      options = [ "subvol=persist" "compress=zstd" ];
-      neededForBoot = true;
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/boot";
-      fsType = "vfat";
-    };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
