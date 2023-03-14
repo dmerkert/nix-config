@@ -2,7 +2,9 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
-
+let
+  hostname = config.networking.hostName;
+in
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
@@ -15,33 +17,33 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
+    { device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/341b0ca1-9ffe-4972-b542-11e4ec4c292b";
+  boot.initrd.luks.devices."${hostname}".device = "/dev/disk/by-label/${hostname}_crypt";
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
+    { device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
       options = [ "subvol=nix" "noatime" "compress=zstd" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/456059af-fdee-4d04-9c81-351b41501042";
+    { device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" ];
       neededForBoot = true;
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0E4E-E06C";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/1ed684fe-fe6d-46d0-9e76-6e6e9e3f73fc"; }
+    [ { device = "/dev/disk/by-label/swap"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
