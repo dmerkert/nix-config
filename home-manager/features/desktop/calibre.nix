@@ -1,5 +1,14 @@
 {pkgs, ...}:
 {
-  home.packages = [ pkgs.calibre ];
-  #TODO: persist
+
+  home = {
+    packages = [ pkgs.calibre ];
+    persistence = {
+      "/persist/home/user".directories = [
+        "buecher"
+        ".config/calibre"
+      ];
+    };
+  };
+  
 }
